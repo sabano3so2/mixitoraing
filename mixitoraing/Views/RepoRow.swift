@@ -21,3 +21,9 @@ struct RepoRow: View {
         }
     }
 }
+
+struct RepoRow_Preview: PreviewProvider {
+    static var previews: some View {
+        RepoRow(repo: .mock1)
+    }
+}

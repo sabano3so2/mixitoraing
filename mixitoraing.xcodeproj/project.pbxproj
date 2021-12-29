@@ -8,24 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		C560BB0A27756FB5001131E4 /* mixitoraingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560BB0927756FB5001131E4 /* mixitoraingApp.swift */; };
-		C560BB0C27756FB5001131E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560BB0B27756FB5001131E4 /* ContentView.swift */; };
+		C560BB0C27756FB5001131E4 /* RepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560BB0B27756FB5001131E4 /* RepoListView.swift */; };
 		C560BB0E27756FBA001131E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C560BB0D27756FBA001131E4 /* Assets.xcassets */; };
 		C560BB1127756FBA001131E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C560BB1027756FBA001131E4 /* Preview Assets.xcassets */; };
 		C560BB1927758E5A001131E4 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560BB1827758E5A001131E4 /* Repo.swift */; };
 		C560BB1B27758E6C001131E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560BB1A27758E6C001131E4 /* User.swift */; };
 		C587CA9D277847CC00B80275 /* RepoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587CA9C277847CC00B80275 /* RepoRow.swift */; };
+		C587CA9F27784CFD00B80275 /* RepoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587CA9E27784CFD00B80275 /* RepoDetailView.swift */; };
+		C587CAA427789DAF00B80275 /* Repo+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587CAA327789DAF00B80275 /* Repo+mock.swift */; };
+		C587CAA627789DCA00B80275 /* User+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587CAA527789DCA00B80275 /* User+mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C560BB0627756FB5001131E4 /* mixitoraing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixitoraing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C560BB0927756FB5001131E4 /* mixitoraingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mixitoraingApp.swift; sourceTree = "<group>"; };
-		C560BB0B27756FB5001131E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C560BB0B27756FB5001131E4 /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
 		C560BB0D27756FBA001131E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C560BB1027756FBA001131E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C560BB172775895D001131E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C560BB1827758E5A001131E4 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		C560BB1A27758E6C001131E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C587CA9C277847CC00B80275 /* RepoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRow.swift; sourceTree = "<group>"; };
+		C587CA9E27784CFD00B80275 /* RepoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailView.swift; sourceTree = "<group>"; };
+		C587CAA327789DAF00B80275 /* Repo+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repo+mock.swift"; sourceTree = "<group>"; };
+		C587CAA527789DCA00B80275 /* User+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				C560BB0927756FB5001131E4 /* mixitoraingApp.swift */,
-				C560BB0B27756FB5001131E4 /* ContentView.swift */,
+				C587CAA027784F3100B80275 /* Views */,
 				C560BB1C27758E8F001131E4 /* Models */,
 				C560BB172775895D001131E4 /* README.md */,
-				C587CA9C277847CC00B80275 /* RepoRow.swift */,
 				C560BB0D27756FBA001131E4 /* Assets.xcassets */,
 				C560BB0F27756FBA001131E4 /* Preview Content */,
 			);
@@ -73,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C560BB1027756FBA001131E4 /* Preview Assets.xcassets */,
+				C587CAA727789DD600B80275 /* Mocks */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -84,6 +90,25 @@
 				C560BB1A27758E6C001131E4 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C587CAA027784F3100B80275 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C560BB0B27756FB5001131E4 /* RepoListView.swift */,
+				C587CA9C277847CC00B80275 /* RepoRow.swift */,
+				C587CA9E27784CFD00B80275 /* RepoDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C587CAA727789DD600B80275 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C587CAA327789DAF00B80275 /* Repo+mock.swift */,
+				C587CAA527789DCA00B80275 /* User+mock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +182,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C587CA9D277847CC00B80275 /* RepoRow.swift in Sources */,
+				C587CAA427789DAF00B80275 /* Repo+mock.swift in Sources */,
 				C560BB1B27758E6C001131E4 /* User.swift in Sources */,
 				C560BB1927758E5A001131E4 /* Repo.swift in Sources */,
-				C560BB0C27756FB5001131E4 /* ContentView.swift in Sources */,
+				C587CA9F27784CFD00B80275 /* RepoDetailView.swift in Sources */,
+				C560BB0C27756FB5001131E4 /* RepoListView.swift in Sources */,
+				C587CAA627789DCA00B80275 /* User+mock.swift in Sources */,
 				C560BB0A27756FB5001131E4 /* mixitoraingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +318,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mixitoraing/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "mixitoraing/Preview\\ Content";
 				DEVELOPMENT_TEAM = 9JKQZRR3RD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -319,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mixitoraing/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "mixitoraing/Preview\\ Content";
 				DEVELOPMENT_TEAM = 9JKQZRR3RD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
