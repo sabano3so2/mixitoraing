@@ -1,44 +1,25 @@
 import SwiftUI
+import Combine
 
 struct RepoListView: View {
-    @State private var mockRepos: [Repo] = []
- 
+    @StateObject private var reposLoader = ReposLoader()
+    
     var body: some View {
         NavigationView {
-            if mockRepos.isEmpty {
-                ProgressView("Loading...")
+            if reposLoader.repos.isEmpty {
+                ProgressView("loading...")
             } else {
-                List(mockRepos) { repo in
+                List(reposLoader.repos) { repo in
                     NavigationLink(
                         destination: RepoDetailView(repo: repo)) {
                         RepoRow(repo: repo)
                     }
-                    .navigationTitle("Repositories")  //リストにタイトルをつけている
                 }
-                .onAppear {
-                    loadRepos()
-                }
-            }
-            
-            List(mockRepos) { repo in
-                NavigationLink(
-                    destination: RepoDetailView(repo: repo)) {
-                    RepoRow(repo: repo)
-                }
-                .navigationTitle("Repositories")  //リストにタイトルをつけている
-            }
-            .onAppear {
-                loadRepos()
+                .navigationTitle("Repositories")
             }
         }
-    }
-    
-    private func loadRepos() {
-        // 1秒後にモックデータを読み込む
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            mockRepos = [
-                .mock1, .mock2, .mock3, .mock4, .mock5
-            ]
+        .onAppear {
+            reposLoader.call()
         }
     }
 }
@@ -46,6 +27,29 @@ struct RepoListView: View {
 struct RepoListView_Previews: PreviewProvider {
     static var previews: some View {
         RepoListView()
+    }
+}
+
+class ReposLoader : ObservableObject {
+    @Published private(set) var repos = [Repo]()
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    func call() {
+        let reposPublisher = Future<[Repo], Error> { promise in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                promise(.success([
+                    .mock1, .mock2, .mock3, .mock4, .mock5
+                ]))
+            }
+        }
+        reposPublisher
+            .sink(receiveCompletion: { completion in
+                print("Finished: \(completion)")
+            }, receiveValue: { [weak self] repos in
+                self?.repos = repos
+            }
+            ).store(in: &cancellables)
     }
 }
 
