@@ -1,12 +1,9 @@
-//
-//  User.swift
-//  mixitoraing
-//
-//  Created by Masayuki WATANABE on 2021/12/24.
-//
-
 import Foundation
 
-struct User {
+struct User: Codable {
     var name: String
+
+    private enum CodingKeys: String, CodingKey {
+        case name = "login"
+    }
 }
